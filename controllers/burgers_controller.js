@@ -1,21 +1,27 @@
+const express = require("express");
 const burger = require("../models/burger");
 
-module.exports = (app) => {
-	app.get("/", (req, res) => {
-		burger.selectAll();
+const router = express.Router();
 
-		res.json(true);
-	});
+router.get("/", (req, res) => {
+	burger.selectAll()
+		.then((result) => {
+			res.json(result);
+		});
+});
 
-	app.post("/burger", (req, res) => {
-		burger.insertOne(req.body.burgerName, req.body.devoured);
+router.post("/burger", (req, res) => {
+	burger.insertOne(req.body.burgerName, req.body.devoured)
+		.then((result) => {
+			res.json(result);
+		});
+});
 
-		res.json(true);
-	});
+router.put("/burger", (req, res) => {
+	burger.updateOne(req.body.burgerName, req.body.devoured)
+		.then((result) => {
+			res.json(result);
+		});
+});
 
-	app.put("/burger", (req, res) => {
-		burger.updateOne(req.body.burgerName, req.body.devoured);
-
-		res.json(true);
-	});
-}
+module.exports = router;

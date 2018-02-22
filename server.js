@@ -1,7 +1,7 @@
 const express = require("express");
 const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
-const burgersController = require("./controllers/burgers_controller");
+const routes = require("./controllers/burgers_controller");
 
 // Express and Port
 const app = express();
@@ -15,7 +15,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Routes
-burgersController(app);
+app.use("/", routes);
 
 // Listen
 app.listen(port, () => {

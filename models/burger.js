@@ -1,28 +1,38 @@
 const orm = require("../config/orm");
 
-exports.selectAll = () => {
-	orm.selectAll()
-		.then((data) => {
-			console.log(data);
-		}).catch((error) => {
-			console.error(error);
-		});
+const burger = {
+	selectAll: () => {
+		return new Promise((resolve, reject) => {
+			orm.selectAll()
+				.then((data) => {
+					resolve(data);
+				}).catch((error) => {
+					reject(error);
+				});
+			});
+	},
+
+	insertOne:  (burgerName, devoured) => {
+		return new Promise((resolve, reject) => {
+			orm.insertOne(burgerName, devoured)
+				.then((data) => {
+					resolve(data);
+				}).catch((error) => {
+					reject(error);
+				});
+			});
+	},
+
+	updateOne: (burgerName, devoured) => {
+		return new Promise((resolve, reject) => {
+			orm.updateOne(burgerName, devoured)
+				.then((data) => {
+					resolve(data);
+				}).catch((error) => {
+					reject(error);
+				});
+			});
+	}
 }
 
-exports.insertOne = (burgerName, devoured) => {
-	orm.insertOne(burgerName, devoured)
-		.then((data) => {
-			console.log(data);
-		}).catch((error) => {
-			console.error(error);
-		});
-}
-
-exports.updateOne = (burgerName, devoured) => {
-	orm.updateOne(burgerName, devoured)
-		.then((data) => {
-			console.log(data);
-		}).catch((error) => {
-			console.error(error);
-		});
-}
+module.exports = burger;
