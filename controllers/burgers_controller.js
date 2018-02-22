@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
 	burger.selectAll()
 		.then((result) => {
-			res.json(result);
+			res.render("index");
 		});
 });
 
