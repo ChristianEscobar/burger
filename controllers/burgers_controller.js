@@ -10,6 +10,8 @@ router.get("/", (req, res) => {
 				burgers: result[0]
 			};
 			res.render("index", burgersObj);
+		}).catch((error) => {
+			console.error(error);
 		});
 });
 
@@ -17,6 +19,8 @@ router.post("/", (req, res) => {
 	burger.insertOne(req.body.burgerDescription, false)
 		.then((result) => {
 			res.redirect("/");
+		}).catch((error) => {
+			console.error(error);
 		});
 });
 
