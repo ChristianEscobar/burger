@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-3"></div>
-	<div class="col-md-9">
+	<div class="col-md-4">
 		<ol>
 			{{#each burgers}}
 				{{#unless this.devoured}}
@@ -10,5 +10,16 @@
 				{{/unless}}
 			{{/each}}
 		</ol>
-	</div>
+	</div> <!-- .col-md-4 -->
+	<div class="col-md-4">
+		<ol>
+			{{#each burgers}}
+				{{#if this.devoured}}
+					<li>
+						{{ this.burger_name }}
+					</li>
+				{{/if}}
+			{{/each}}
+		</ol>
+	</div> <!-- .col-md-4 -->
 </div> <!-- .row -->

@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// Override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
+
 // Set Handlebars.
 const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
