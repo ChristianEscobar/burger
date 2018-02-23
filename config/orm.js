@@ -15,10 +15,14 @@ const orm = {
 
 						resolve(results);
 					}).catch((error) => {
-						reject(error);
+						const errorMsg = "Error encountered while trying to query from database:\n" + error;
+
+						reject(errorMsg);
 					});
 			}).catch((error) => {
-				reject(error);
+				const errorMsg = "Error encountered while trying to connect to database:\n" + error;
+
+				reject(errorMsg);
 			});
 		});
 	},
@@ -36,10 +40,14 @@ const orm = {
 
 							resolve(results);
 					}).catch((error) => {
-						reject(error)
+						const errorMsg = "Error encountered while trying to insert into database:\n" + error;
+
+						reject(errorMsg);
 					});
 			}).catch((error) => {
-				reject(error)
+				const errorMsg = "Error encountered while trying to connect to database:\n" + error;
+
+				reject(errorMsg);
 			});
 		});
 	},
@@ -58,10 +66,14 @@ const orm = {
 
 							resolve(results);
 					}).catch((error) => {
-						reject(error);
+						const errorMsg = "Error encountered while trying to update data in database:\n" + error;
+
+						reject(errorMsg);
 					});
 				}).catch((error) => {
-					reject(error);
+					const errorMsg = "Error encountered while trying to connect to database:\n" + error;
+
+					reject(errorMsg);
 				});
 		});
 	}
