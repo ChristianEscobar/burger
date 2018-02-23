@@ -1,25 +1,31 @@
 <div class="row">
 	<div class="col-md-3"></div>
 	<div class="col-md-4">
-		<ol>
+		<ol class="list-group">
 			{{#each burgers}}
 				{{#unless this.devoured}}
-					<li>
+					<li class="list-group-item">
 						{{ this.burger_name }}
-					</li>
 
-					<form action="/{{this.id}}?_method=PUT" method="POST">
-						<button type="submit">Devour It!</button>
-					</form>
+						<div class="devour-btn-container">
+							<form action="/{{this.id}}?_method=PUT" method="POST">
+								<button class="btn btn-danger" type="submit">Chomp It!</button>
+							</form>
+						</div>
+					</li>
+					
+					
+
 				{{/unless}}
 			{{/each}}
 		</ol>
 	</div> <!-- .col-md-4 -->
+	<div class="col-md-1"></div>
 	<div class="col-md-4">
-		<ol>
+		<ol class="list-group">
 			{{#each burgers}}
 				{{#if this.devoured}}
-					<li>
+					<li class="list-group-item">
 						{{ this.burger_name }}
 					</li>
 				{{/if}}
