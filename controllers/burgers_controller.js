@@ -24,14 +24,13 @@ router.post("/", (req, res) => {
 		});
 });
 
-router.put("/burger", (req, res) => {
-
-	/*
-	burger.updateOne(req.body.burgerName, req.body.devoured)
+router.put("/:id", (req, res) => {
+	burger.updateOne(req.params.id)
 		.then((result) => {
-			res.json(result);
+			res.redirect("/");
+		}).catch((error) => {
+			console.error(error);
 		});
-		*/
 });
 
 module.exports = router;

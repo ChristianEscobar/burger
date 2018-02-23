@@ -7,6 +7,10 @@
 					<li>
 						{{ this.burger_name }}
 					</li>
+
+					<form action="/{{this.id}}?_method=PUT" method="POST">
+						<button type="submit">Devour It!</button>
+					</form>
 				{{/unless}}
 			{{/each}}
 		</ol>

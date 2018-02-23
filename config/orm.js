@@ -52,15 +52,15 @@ const orm = {
 		});
 	},
 
-	updateOne: (burgerName, devoured) => {
+	updateOne: (burgerId) => {
 		return new Promise((resolve, reject) => {
 			mysql.createConnection(connection())
 				.then((conn) => {
 					const sqlQuery = `UPDATE burgers
-															SET devoured = ?
-															WHERE LOWER(burger_name) = LOWER(?)`;
+															SET devoured = true
+															WHERE id = ?`;
 
-					conn.query(sqlQuery, [devoured, burgerName])
+					conn.query(sqlQuery, [burgerId])
 						.then((results) => {
 							conn.end();
 

@@ -23,9 +23,9 @@ const burger = {
 			});
 	},
 
-	updateOne: (burgerName, devoured) => {
+	updateOne: (burgerId) => {
 		return new Promise((resolve, reject) => {
-			orm.updateOne(burgerName, devoured)
+			orm.updateOne(burgerId)
 				.then((data) => {
 					resolve(data);
 				}).catch((error) => {
