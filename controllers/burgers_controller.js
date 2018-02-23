@@ -6,7 +6,6 @@ const router = express.Router();
 router.get("/", (req, res) => {
 	burger.selectAll()
 		.then((result) => {
-			console.log(result[0]);
 			const burgersObj = {
 				burgers: result[0]
 			};
@@ -14,18 +13,21 @@ router.get("/", (req, res) => {
 		});
 });
 
-router.post("/burger", (req, res) => {
-	burger.insertOne(req.body.burgerName, req.body.devoured)
+router.post("/", (req, res) => {
+	burger.insertOne(req.body.burgerDescription, false)
 		.then((result) => {
-			res.json(result);
+			res.redirect("/");
 		});
 });
 
 router.put("/burger", (req, res) => {
+
+	/*
 	burger.updateOne(req.body.burgerName, req.body.devoured)
 		.then((result) => {
 			res.json(result);
 		});
+		*/
 });
 
 module.exports = router;
