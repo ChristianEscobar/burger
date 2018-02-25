@@ -16,8 +16,11 @@ div.title {
 
 .devour-btn-container{
 	float: right;
+	position: absolute;
+	top: 10%;
+	left: 70%;
 }
 
-.devour-btn-container > form > button {
-	top: 0;
+li.list-group-item {
+	margin-bottom: 5px;
 }

@@ -6,16 +6,15 @@
 				{{#unless this.devoured}}
 					<li class="list-group-item">
 						{{ this.burger_name }}
-
+						
 						<div class="devour-btn-container">
 							<form action="/{{this.id}}?_method=PUT" method="POST">
 								<button class="btn btn-danger" type="submit">Chomp It!</button>
 							</form>
 						</div>
+
 					</li>
 					
-					
-
 				{{/unless}}
 			{{/each}}
 		</ol>
