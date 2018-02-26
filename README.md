@@ -17,9 +17,11 @@ Burger Chomp is a burger logger application created using MySQL, Node, Express a
 ## How Do I Use It?
 
 ### Using Heroku
+
 The application is hosted on Heroku and can be accessed by clicking on the following link [Burger Chomp](https://burger-chomp.herokuapp.com/)
 
 ### On Your Local Machine
+
 Execute the following steps to setup and run the application on your local machine.
 
 1. Clone this repository to your machine and then run ```npm install```.
@@ -30,3 +32,6 @@ Execute the following steps to setup and run the application on your local machi
 
 ## Under The Hood
 
+The application uses a MySQL database to store the burger data and Node as the backend.
+
+Express is used as the application server and Handlebars as the web template system.
