@@ -21,6 +21,10 @@ div.title {
 	left: 70%;
 }
 
+.burger-form {
+	text-align: center;
+}
+
 li.list-group-item {
 	margin-bottom: 5px;
 }
