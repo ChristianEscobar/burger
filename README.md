@@ -1,5 +1,7 @@
 # burger
 
+![burger-chomp](public/assets/images/github/screenshot.png)
+
 ## What Is It?
 
 Burger Chomp is a burger logger application created using MySQL, Node, Express and Handlebars.
