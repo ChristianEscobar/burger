@@ -34,6 +34,14 @@ Execute the following steps to setup and run the application on your local machi
 
 ## Under The Hood
 
-The application uses a MySQL database to store the burger data and Node as the backend.
+The application uses a MySQL database to store the burger data and Node.js as the backend.  Express is used as the application server and Handlebars as the web template system.  Below is a list of all Node packages used:
 
-Express is used as the application server and Handlebars as the web template system.
+* [express](https://www.npmjs.com/package/express)
+* [method-override](https://www.npmjs.com/package/method-override)
+* [body-parser](https://www.npmjs.com/package/body-parser)
+* [path](https://nodejs.org/api/path.html)
+* [mysql2](https://www.npmjs.com/package/mysql2)
+
+## Error Handling
+
+Empty burger names are not allowed.
