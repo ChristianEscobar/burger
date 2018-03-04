@@ -12,7 +12,7 @@ Burger Chomp is a burger logger application created using MySQL, Node, Express a
 
 * Whenever a user submits a burger's name, the app will display the burger on the left side of the page -- waiting to be devoured.
 
-* Each burger in the waiting area also has a `Chomp It!` button. When the user clicks it, the burger will move to the right side of the page.
+* Each burger in the waiting area also has a `Chomp It!` button. When the user clicks it, the burger will move to the "chomped" side of the page.
 
 * The application stores every burger in the database, whether devoured or not.
 
